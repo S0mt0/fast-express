@@ -21,7 +21,7 @@ export const Header = () => {
         <Logo />
       </div>
       <nav className="w-[90%] sm:w-[95%] max-w-[560px] md:max-w-[1280px] xl:max-w-[1280px] ml-auto flex items-center justify-center bg-[#eeeeee] polygon">
-        <ul className="w-full hidden md:flex items-center h-16 justify-center gap-8 border-b-4 border-[#e0dfdf]">
+        <ul className="w-full hidden md:flex items-center h-16 justify-center gap-8 border-b-4 border-[#d1d1d1]">
           {/* navigation links */}
           {navLinks.map(({ href, title }) => (
             <NavItem key={href} href={href} title={title} />

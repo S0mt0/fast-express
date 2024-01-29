@@ -139,3 +139,11 @@ img {
   min-height: 20rem;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 6% 100%, 0% 85%);
 }
+
+.polygon-3 {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 0%);
+}
+
+.polygon-4 {
+  clip-path: polygon(0% 0%, 100% 0%, 91% 0%, 100% 100%, 0% 100%);
+}

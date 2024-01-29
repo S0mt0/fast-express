@@ -17,10 +17,12 @@ export const Header = () => {
   return (
     <header className="w-full absolute top-0 z-20">
       <div className="container h-24 flex justify-center items-center sm:justify-start shadow-sm bg-white">
+        {/* logo */}
         <Logo />
       </div>
       <nav className="w-[90%] sm:w-[95%] max-w-[560px] md:max-w-[1280px] xl:max-w-[1280px] ml-auto flex items-center justify-center bg-[#eeeeee] polygon">
         <ul className="w-full hidden md:flex items-center h-16 justify-center gap-8 border-b-4 border-[#e0dfdf]">
+          {/* navigation links */}
           {navLinks.map(({ href, title }) => (
             <NavItem key={href} href={href} title={title} />
           ))}
@@ -35,7 +37,7 @@ export const Header = () => {
         </ul>
 
         {/* mobile-menu button */}
-        <div className="border-b-2 md:border-b-4 md:border-[#dfdede] border-[#d0d0d0] flex md:hidden h-16 items-center justify-center w-full">
+        <div className="border-b-2 md:border-b-4 md:border-[#dfdede] border-[#d0d0d0] flex md:hidden h-14 items-center justify-center w-full">
           <button
             type="button"
             className="p-1 px-2 rounded-sm bg-gray-400/30"

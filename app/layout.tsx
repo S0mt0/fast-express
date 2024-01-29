@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/navbar/header";
+import Footer from "@/components/footer/footer";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -18,6 +19,11 @@ export const metadata: Metadata = {
     "deliver",
     "parcel",
     "package delivery",
+    "dhl",
+    "DHL",
+    "dhl services",
+    "dhl delivery",
+    "international delivery services",
   ],
 };
 
@@ -31,6 +37,7 @@ export default function RootLayout({
       <body className={raleway.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,11 +1,63 @@
 import Link from "next/link";
+
 import { navLinks } from "../navbar/nav-links";
+import { Title } from "../title";
+import Logo from "../logo";
+import { footerLinkItems, connectIcons, contactLinks } from "./items";
+import { SocialIcon } from "./social-icon";
+import { ContactItem } from "./contact-item";
 
 export const Footer = () => {
   return (
     <footer>
       <div className="py-28 px-16 bg-[#222222] text-white relative">
         <div className="absolute bg-white h-16 w-1/3 top-0 right-0 polygon-3" />
+
+        <div className="flex flex-col sm:flex-row gap-6 text-stone-400 text-[12px] sm:text-sm max-w-[740px]">
+          <div className="flex-1 shrink-0">
+            <Logo path="/images/footer_logo.png" />
+            <p className="my-6 leading-loose">
+              Fast Express Courier offers a host of logistic management services
+              and supply chain solutions. We provide innovative solutions with
+              the best people, processes, and technology.
+            </p>
+            <p className="uppercase text-stone-200/80 my-4 font-bold">
+              get connected
+            </p>
+            <div className="flex gap-2">
+              {connectIcons.map((icon, i) => (
+                <SocialIcon key={i} icon={icon} />
+              ))}
+            </div>
+          </div>
+
+          <div className="flex-1">
+            <Title mode="light" className="mb-6">
+              our services
+            </Title>
+            <ul className=" leading-loose">
+              {footerLinkItems.map((list, index) => (
+                <li
+                  key={index}
+                  className="capitalize cursor-pointer hover:text-white"
+                >
+                  {list}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex-1">
+            <Title mode="light" className="mb-6">
+              contact us
+            </Title>
+            <ul className="flex flex-col gap-4">
+              {contactLinks.map(({ contact, icon }, i) => (
+                <ContactItem key={i} contact={contact} icon={icon} />
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
 
       {/* copyright */}

@@ -1,4 +1,4 @@
-import { ShipmentActions } from "..";
+import { ShipmentActions } from "../actions";
 
 // single event
 export type TEvent = {

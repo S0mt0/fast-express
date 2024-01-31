@@ -18,7 +18,7 @@ export const HeroSection = ({ interval = 11500 }: { interval?: number }) => {
 
   return (
     <section
-      className="h-screen bg-slate-300 bg-center bg-cover bg-no-repeat relative w-full overflow-hidden"
+      className="h-screen bg-white bg-center bg-cover bg-no-repeat relative w-full overflow-hidden"
       style={{
         backgroundImage: "url('/images/bg_02.jpg')",
       }}

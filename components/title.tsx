@@ -21,6 +21,12 @@ export interface TitleProps
   mode?: "light" | "dull";
 }
 
+/**
+ * This is a custom reusable Title component with only two different variants and color theme described by the `mode` property. These variants and color theme are based on the overall theme of the project provied by the design. However, it can be customized to suit any design style or needs.
+ * @description Has all properties and attributes of a normal `div` element including the `className` property.
+ * @param {object} custom_properties {subtitle, mode, variant}
+ */
+
 const Title = React.forwardRef<HTMLDivElement, TitleProps>(
   ({ className, variant, mode, children, subtitle, ...props }, ref) => {
     return (
@@ -38,11 +44,11 @@ const Title = React.forwardRef<HTMLDivElement, TitleProps>(
         >
           {children}
         </div>
-        <div className="flex flex-row h-[1px] w-2/3 gap-1">
+        <div className="flex flex-row h-[1px] w-2/3 gap-1 max-w-[130px]">
           <div
             className={cn(
               "h-full w-4",
-              mode === "light" ? "bg-stone-200/80" : "bg-black/80"
+              mode === "light" ? "bg-stone-200" : "bg-black/80"
             )}
           />
           <div className={cn("bg-green-600 h-full flex-1")} />

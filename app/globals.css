@@ -148,3 +148,9 @@ img {
 .polygon-4 {
   clip-path: polygon(0% 0%, 100% 0%, 91% 0%, 100% 100%, 0% 100%);
 }
+
+.gradient-bg-1 {
+  background: linear-gradient(#013865c0, #013865c0),
+    url("/images/search_dark_bg.jpg") center/cover no-repeat;
+  background-color: rgba(0, 0, 0, 0.75);
+}

@@ -8,10 +8,10 @@ type Achievementprops = {
   title: string;
   imgUrl: string;
   initialValue: number;
-  currentValue: number;
+  targetValue: number;
 } & { index?: number };
 export const Achievement = ({
-  currentValue,
+  targetValue,
   imgUrl,
   initialValue,
   title,
@@ -19,11 +19,13 @@ export const Achievement = ({
 }: Achievementprops) => {
   useEffect(() => {
     async function initCountUp() {
-      const countUpAnim = new CountUp(`startId_${index}`, currentValue, {
+      const countUpAnim = new CountUp(`countId${index}`, targetValue, {
         enableScrollSpy: true,
         useIndianSeparators: false,
         scrollSpyOnce: true,
+        startVal: initialValue,
       });
+
       if (!countUpAnim.error) {
         countUpAnim.start();
       } else {
@@ -32,7 +34,7 @@ export const Achievement = ({
     }
 
     initCountUp();
-  }, [index, currentValue]);
+  }, [index, targetValue, initialValue]);
 
   return (
     <div className="flex flex-col items-center">
@@ -42,11 +44,11 @@ export const Achievement = ({
           width={100}
           height={100}
           alt="cart"
-          className="w-8 h-8"
+          className="sm:w-8 sm:h-8 h-6 w-6"
         />
         <span
-          className="font-semibold font-title text-3xl sm:text-4xl text-[#DB0F31]"
-          id={`startId_${index}`}
+          className="font-semibold font-title text-xl sm:text-4xl text-[#DB0F31]"
+          id={`countId${index}`}
         >
           {initialValue}
         </span>

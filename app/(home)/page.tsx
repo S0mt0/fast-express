@@ -1,4 +1,9 @@
-import { HeroSection, FormSection, AchievementSection } from "./_components";
+import {
+  HeroSection,
+  FormSection,
+  AchievementSection,
+  TeamSection,
+} from "./_components";
 
 const HomePage = () => {
   return (
@@ -6,6 +11,7 @@ const HomePage = () => {
       <HeroSection />
       <FormSection />
       <AchievementSection />
+      <TeamSection />
     </main>
   );
 };

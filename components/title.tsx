@@ -35,7 +35,9 @@ const Title = React.forwardRef<HTMLDivElement, TitleProps>(
         ref={ref}
         {...props}
       >
-        <div className="bg-stone-300">{subtitle}</div>
+        <div className="font-semibold text-sm capitalize text-stone-300 -mb-[8px]">
+          {subtitle}
+        </div>
         <div
           className={cn(
             "uppercase font-bold",
@@ -44,7 +46,7 @@ const Title = React.forwardRef<HTMLDivElement, TitleProps>(
         >
           {children}
         </div>
-        <div className="flex flex-row h-[1px] w-2/3 gap-1 max-w-[130px]">
+        <div className="flex flex-row h-[2px] w-2/3 gap-1 max-w-[130px]">
           <div
             className={cn(
               "h-full w-4",

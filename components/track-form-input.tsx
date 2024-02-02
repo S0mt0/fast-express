@@ -12,12 +12,12 @@ export const TrackFormInput = () => {
           name="tracking-number"
           id="tracking-number"
           placeholder="enter your tracking number"
-          className=" h-full border-none outline-none px-[15px] pl-10 appearance-none placeholder:capitalize "
+          className=" h-full border-none outline-none px-[15px] appearance-none placeholder:capitalize text-sm w-full"
         />
-        <Truck className="absolute left-2 text-stone-600/75 w-5 h-5 top-0 translate-y-1/2" />
+        {/* <Truck className="absolute left-2 text-stone-600/75 w-5 h-5 top-0 translate-y-1/2" /> */}
       </div>
       <button
-        type="submit"
+        type="button"
         className="flex-1 w-full sm:flex-[0.15] cursor-pointer h-full font-semibold text-sm font-title capitalize sm:uppercase bg-green-700 text-white hover:bg-green-700/95 transition-colors"
       >
         track

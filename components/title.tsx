@@ -46,7 +46,7 @@ const Title = React.forwardRef<HTMLDivElement, TitleProps>(
         >
           {children}
         </div>
-        <div className="flex flex-row h-[2px] w-2/3 gap-1 max-w-[130px]">
+        <div className="flex flex-row h-[2px] w-2/3 gap-1 max-w-[115px]">
           <div
             className={cn(
               "h-full w-4",

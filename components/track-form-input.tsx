@@ -18,7 +18,7 @@ export const TrackFormInput = () => {
       </div>
       <button
         type="submit"
-        className="flex-1 w-full sm:flex-[0.15] cursor-pointer h-full font-semibold text-sm font-title uppercase bg-green-700 text-white hover:bg-green-700/95 transition-colors"
+        className="flex-1 w-full sm:flex-[0.15] cursor-pointer h-full font-semibold text-sm font-title capitalize sm:uppercase bg-green-700 text-white hover:bg-green-700/95 transition-colors"
       >
         track
       </button>

@@ -15,6 +15,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "countries-list": "^3.0.6",
+    "countup.js": "^2.8.0",
     "framer-motion": "^11.0.3",
     "lucide-react": "^0.315.0",
     "moment": "^2.30.1",

@@ -4,7 +4,7 @@ import { CountUp } from "countup.js";
 import Image from "next/image";
 import { useEffect } from "react";
 
-type Achievementprops = {
+type AchievementProps = {
   title: string;
   imgUrl: string;
   initialValue: number;
@@ -16,7 +16,7 @@ export const Achievement = ({
   initialValue,
   title,
   index,
-}: Achievementprops) => {
+}: AchievementProps) => {
   useEffect(() => {
     async function initCountUp() {
       const countUpAnim = new CountUp(`countId${index}`, targetValue, {
@@ -44,10 +44,10 @@ export const Achievement = ({
           width={100}
           height={100}
           alt="cart"
-          className="sm:w-8 sm:h-8 h-6 w-6"
+          className="sm:w-8 sm:h-8 h-7 w-7"
         />
         <span
-          className="font-semibold font-title text-xl sm:text-4xl text-[#DB0F31]"
+          className="font-semibold font-title text-3xl sm:text-4xl text-[#DB0F31]"
           id={`countId${index}`}
         >
           {initialValue}

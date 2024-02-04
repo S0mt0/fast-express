@@ -12,7 +12,7 @@ export const OnboardingSection = ({
   return (
     <section
       className={cn(
-        "flex items-center mb-6 md:mb-0",
+        "flex items-center mt-6 md:mt-0",
         index % 2 !== 0
           ? "flex-col-reverse md:flex-row-reverse"
           : "flex-col-reverse md:flex-row"

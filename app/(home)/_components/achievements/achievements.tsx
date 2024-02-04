@@ -3,8 +3,8 @@ import { achievementsData } from "./data";
 
 export const AchievementSection = () => {
   return (
-    <section className="px-10 sm:px-16 md:px-24 py-20 md:py-28 bg-white">
-      <h2 className="w-fit text-2xl sm:text-3xl flex flex-col gap-3 items-center font-serif mx-auto text-black uppercase font-semibold mb-7">
+    <section className="px-10 sm:px-16 md:px-24 py-12 md:py-28 bg-white">
+      <h2 className="w-fit text-3xl flex flex-col gap-3 items-center font-serif mx-auto text-black uppercase font-semibold mb-7">
         <span>Achievements</span>
         <span className="h-[2px] bg-[#DB0F31] w-1/4" />
       </h2>

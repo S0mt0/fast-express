@@ -1,7 +1,8 @@
 "use client";
-import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+
+import { cn } from "@/lib/utils";
 
 export const HeroSection = ({ interval = 11500 }: { interval?: number }) => {
   const slideImages = ["/images/slider_1.jpg", "/images/slider_2.jpg"];

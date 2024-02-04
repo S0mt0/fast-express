@@ -13,9 +13,9 @@ const HomePage = () => {
       <HeroSection />
       <FormSection />
       {/* <FeaturesSection /> */}
-      <div className="py-16 md:py-28">
-        {onboardingData.map((section, i) => (
-          <OnboardingSection {...section} key={i} index={i} />
+      <div className="pb-8 pt-16 md:pt-28 group">
+        {onboardingData.map((onboardingData, i) => (
+          <OnboardingSection {...onboardingData} key={i} index={i} />
         ))}
       </div>
       <AchievementSection />

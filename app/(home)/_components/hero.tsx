@@ -38,12 +38,12 @@ export const HeroSection = ({ interval = 11500 }: { interval?: number }) => {
             duration: 1.5,
             damping: 55,
           }}
-          className="absolute inset-0 h-full object-cover object-center md:object-left"
+          className="absolute inset-0 h-full object-cover object-center md:object-left w-full"
         />
         <div
           className={cn(
             "absolute inset-0 h-full z-20 font-title flex flex-col justify-center p-6 sm:p-8 md:p-14",
-            currentImage == 0 ? "items-start" : "items-end"
+            currentImage === 0 ? "items-start" : "items-end"
           )}
           key="text"
         >

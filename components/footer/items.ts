@@ -24,10 +24,10 @@ export const contactLinks = [
     icon: Send,
     contact: "42 Springfield Road, Norwich. United Kingdom.",
   },
-  {
-    icon: Phone,
-    contact: "+44 000000000",
-  },
+  // {
+  //   icon: Phone,
+  //   contact: "+44 000000000",
+  // },
   {
     icon: Mail,
     contact: "contact@fastexpresscourier.online",

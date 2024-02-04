@@ -23,7 +23,7 @@ export const OnboardingSection = ({
           src={imageUrl}
           width={800}
           height={600}
-          alt={`onboarding_image_${index}`}
+          alt={`onboarding_image_${index + 1}`}
           className="w-full h-full object-cover mt-6 md:mt-0"
         />
       </div>

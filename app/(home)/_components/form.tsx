@@ -1,5 +1,8 @@
+import { Suspense } from "react";
+
 import { Title } from "@/components/title";
 import { TrackFormInput } from "@/components/track-form-input";
+import { TrackFormInputFallback } from "@/components/track-form-input-fallback";
 import { SectionWrapper } from ".";
 
 export const FormSection = () => {
@@ -11,7 +14,9 @@ export const FormSection = () => {
             track your shipment
           </h2>
         </Title>
-        <TrackFormInput />
+        <Suspense fallback={<TrackFormInputFallback />}>
+          <TrackFormInput />
+        </Suspense>
       </SectionWrapper>
     </section>
   );

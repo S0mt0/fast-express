@@ -3,16 +3,17 @@ import {
   FormSection,
   AchievementSection,
   TeamSection,
-  FeaturesSection,
+  // FeaturesSection,
+  OnboardingSection,
+  onboardingData,
 } from "./_components";
-import { OnboardingSection, onboardingData } from "./_components/onboarding";
 
 const HomePage = () => {
   return (
     <main className="pt-24">
       <HeroSection />
       <FormSection />
-      <FeaturesSection />
+      {/* <FeaturesSection /> */}
       <div className="pb-8 pt-16 md:pt-28 group">
         {onboardingData.map((onboardingData, i) => (
           <OnboardingSection {...onboardingData} key={i} index={i} />

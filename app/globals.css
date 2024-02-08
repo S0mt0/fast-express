@@ -154,3 +154,9 @@ img {
     url("/images/search_dark_bg.jpg") center/cover no-repeat;
   background-color: rgba(0, 0, 0, 0.75);
 }
+
+@media print {
+  #no-print {
+    display: none;
+  }
+}

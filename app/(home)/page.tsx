@@ -12,7 +12,7 @@ const HomePage = () => {
     <main className="pt-24">
       <HeroSection />
       <FormSection />
-      {/* <FeaturesSection /> */}
+      <FeaturesSection />
       <div className="pb-8 pt-16 md:pt-28 group">
         {onboardingData.map((onboardingData, i) => (
           <OnboardingSection {...onboardingData} key={i} index={i} />

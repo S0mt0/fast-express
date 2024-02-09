@@ -10,7 +10,7 @@ export const TrackFormInput = ({
   handleSubmit,
   styles,
 }: {
-  handleSubmit?: (e: FormEvent<HTMLFormElement>) => Promise<void>;
+  handleSubmit?: (e: FormEvent<HTMLFormElement>) => Promise<void> | void;
   styles?: string;
 }) => {
   const router = useRouter();

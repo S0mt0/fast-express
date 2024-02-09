@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import axios from "axios";
 
 import { useMobileMenuStore, useShipmentStore } from ".";
@@ -30,22 +30,30 @@ export const useFetchShipmentFunc = (query?: string) => {
     }
   }, [query, setTrackingNumber]);
 
-  const fetchShipment = async (trackingId: string) => {
-    initializeFetchShipmentState();
+  const fetchShipment = useCallback(
+    async (trackingId: string) => {
+      initializeFetchShipmentState();
 
-    try {
-      const { data } = await axios.get(
-        `https://dashboard-01-server-4fd151ce1921.herokuapp.com/api/v1/shipment/tracking?trackingId=${trackingId}`
-      );
+      try {
+        const { data } = await axios.get(
+          `https://dashboard-01-server-4fd151ce1921.herokuapp.com/api/v1/shipment/tracking?trackingId=${trackingId}`
+        );
 
-      onFetchShipmentSuccess(data?.data?.shipment as TShipment);
-    } catch (error: any) {
-      console.log(error?.response?.data);
-      onFetchShipmentError(error?.response?.data?.data?.trackingId as string);
-    } finally {
-      closeMenu();
-    }
-  };
+        onFetchShipmentSuccess(data?.data?.shipment as TShipment);
+      } catch (error: any) {
+        console.log(error?.response?.data);
+        onFetchShipmentError(error?.response?.data?.data?.trackingId as string);
+      } finally {
+        closeMenu();
+      }
+    },
+    [
+      closeMenu,
+      initializeFetchShipmentState,
+      onFetchShipmentError,
+      onFetchShipmentSuccess,
+    ]
+  );
 
   //   const handleInputChange = (input: string) => {
   //     shipDispatch({

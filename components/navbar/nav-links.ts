@@ -13,6 +13,6 @@ export const navLinks = [
   },
   {
     title: "track & trace",
-    href: "/track-and-trace",
+    href: "/tracking",
   },
 ];

@@ -46,15 +46,19 @@ export const useShipmentStore = () => {
 };
 
 export const useMobileMenuStore = () => {
-  const { closeMenu, menuIsOpen, openMenu } = MobileMenuStore((state) => ({
-    menuIsOpen: state.mobileMenuIsOpen,
-    openMenu: state.openMenu,
-    closeMenu: state.closeMenu,
-  }));
+  const { closeMenu, menuIsOpen, openMenu, toggleMenu } = MobileMenuStore(
+    (state) => ({
+      menuIsOpen: state.mobileMenuIsOpen,
+      openMenu: state.openMenu,
+      closeMenu: state.closeMenu,
+      toggleMenu: state.toggleMenu,
+    })
+  );
 
   return {
     closeMenu,
     menuIsOpen,
     openMenu,
+    toggleMenu,
   };
 };

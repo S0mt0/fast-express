@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
 import { AlignJustify, SearchIcon } from "lucide-react";
+
+import { useMobileMenuStore } from "../../sdk/hooks";
 
 import { navLinks } from "./nav-links";
 import { MobileMenu } from "./mobile-menu";
@@ -8,12 +9,7 @@ import NavItem from "./nav-item";
 import Logo from "../logo";
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen((current) => !current);
-  };
-
+  const { menuIsOpen, toggleMenu } = useMobileMenuStore();
   return (
     <header className="w-full absolute top-0 z-50">
       <div className="container h-24 flex justify-center items-center sm:justify-start shadow-sm bg-white">
@@ -41,7 +37,7 @@ export const Header = () => {
           <button
             type="button"
             className="p-1 px-2 rounded-sm bg-gray-400/30"
-            onClick={handleClick}
+            onClick={toggleMenu}
           >
             <AlignJustify className="text-stone-500" />
           </button>
@@ -49,7 +45,7 @@ export const Header = () => {
       </nav>
 
       {/* mobile-menu */}
-      <MobileMenu isOpen={isOpen} />
+      <MobileMenu isOpen={menuIsOpen} />
     </header>
   );
 };

@@ -1,11 +1,20 @@
-import { IMobileMenuStore } from "@/sdk/interface";
+import { devtools } from "zustand/middleware";
 import { create } from "zustand";
 
-export const MobileMenuStore = create<IMobileMenuStore>((set) => ({
-  // states
-  mobileMenuIsOpen: false,
+import { IMobileMenuStore } from "../../interface";
 
-  //   setters
-  openMenu: () => set({ mobileMenuIsOpen: true }),
-  closeMenu: () => set({ mobileMenuIsOpen: false }),
-}));
+export const MobileMenuStore = create<IMobileMenuStore>()(
+  devtools(
+    (set) => ({
+      // states
+      mobileMenuIsOpen: false,
+
+      //   setters
+      openMenu: () => set({ mobileMenuIsOpen: true }),
+      closeMenu: () => set({ mobileMenuIsOpen: false }),
+      toggleMenu: () =>
+        set((state) => ({ mobileMenuIsOpen: !state.mobileMenuIsOpen })),
+    }),
+    { store: "mobileMenuStore", enabled: true }
+  )
+);

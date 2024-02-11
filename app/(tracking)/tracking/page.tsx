@@ -1,5 +1,7 @@
+import { TrackingUI } from "../_components";
+
 const TrackingPage = () => {
-  return <div>tracking page</div>;
+  return <TrackingUI />;
 };
 
 export default TrackingPage;

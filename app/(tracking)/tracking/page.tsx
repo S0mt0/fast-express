@@ -1,7 +1,12 @@
+import { Suspense } from "react";
 import { TrackingUI } from "../_components";
 
 const TrackingPage = () => {
-  return <TrackingUI />;
+  return (
+    <Suspense>
+      <TrackingUI />
+    </Suspense>
+  );
 };
 
 export default TrackingPage;

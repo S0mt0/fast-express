@@ -52,20 +52,20 @@ export const TrackingUI = () => {
 
   return (
     <div>
-      <div className="my-10 mx-7 bg-white px-6">
-        <h2 className="text-center font-light text-2xl sm:text-[2rem] md:text-[2.6rem] uppercase font-title">
+      <div className="my-10 mx-7 bg-white px-2">
+        <h2 className="text-center font-light text-2xl sm:text-3xl md:text-4xl uppercase font-title">
           {!error ? "Track: Express" : "Track & Trace"}
         </h2>
       </div>
-      <div className="bg-[#f2f2f2] min-h-[40%] py-7 px-6">
+      <div className="bg-[#222222] min-h-[40%] py-12 px-6">
         <div className="w-full max-w-xl mx-auto">
           <TrackFormInput handleSubmit={(e) => handleSubmit(e)} />
         </div>
         {loading ? (
-          <div className="mt-14 mb-6 flex justify-center items-center">
+          <div className="mt-12 flex justify-center items-center">
             <Image
-              width={100}
-              height={100}
+              width={50}
+              height={50}
               priority
               src="/loaders/loader-01.svg"
               alt="please wait..."
@@ -241,13 +241,13 @@ export const TrackingUI = () => {
               {/* - */}
               {/* - */}
               {error && (
-                <div className="flex gap-4 sm:gap-[1.7rem] border-none">
+                <div className="flex gap-2 sm:gap-[1.7rem] border-none p-4">
                   <div>
                     <Info className="text-[1.3rem] sm:text-[1.7rem]" />
                   </div>
                   <div>
-                    <h4 className="text-sm">{unknownShipment}</h4>
-                    <p className="my-4 text-sm">
+                    <h2 className="text-sm font-bold">{unknownShipment}</h2>
+                    <p className="my-4 text-[0.8rem] sm:text-[0.9rem]">
                       Sorry, your tracking attempt was not successful. Please
                       check your tracking number.
                     </p>
@@ -260,8 +260,8 @@ export const TrackingUI = () => {
       </div>
 
       {!loading && (
-        <div className="w-full max-w-2xl mx-auto text-center py-4 border-b border-[]#cacaca">
-          <p className="leading-normal font-extralight mb-9 text-[0.8rem] sm:text-[0.9rem]">
+        <div className="w-11/12 max-w-2xl mx-auto text-center mt-4 p-4 border-b border-[]#cacaca">
+          <p className="leading-normal mb-9 text-[0.8rem] sm:text-[0.9rem] font-semibold">
             If you would prefer to speak to someone personally about the
             location of your shipment, please
             <br />
@@ -270,23 +270,23 @@ export const TrackingUI = () => {
               rel="noreferrer noopener"
               className="underline text-[#d40511]"
             >
-              contact DHLShipping Express Customer Service
+              contact FastExpress-Courier Customer Service
             </a>
           </p>
 
-          <h2 className="font-title text-base sm:text-xl md:text-2xl">
+          <h2 className="font-title text-lg sm:text-xl md:text-2xl font-bold">
             Quick Answers to Common Tracking Questions
           </h2>
         </div>
       )}
 
       {!loading && success && (
-        <div className="w-full max-w-2xl mb-3 mx-auto text-sm">
+        <div className="w-11/12 max-w-2xl mb-3 mx-auto text-sm">
           {faq.faqSuccess.map((data, i) => (
             <div className="py-4 border-b border-[#cacaca]" key={i}>
               <h3
                 onClick={() => toggleQA(i)}
-                className="sm:text-sm flex justify-between items-center cursor-default leading-tight sm:leading-normal hover:text-[#d40511] group"
+                className="font-bold flex justify-between items-center cursor-default leading-tight sm:leading-normal hover:text-[#d40511] group"
               >
                 <span>{data.q}</span>
                 <span className="ml-10">
@@ -298,7 +298,7 @@ export const TrackingUI = () => {
                 </span>
               </h3>
               {activeQA === i && (
-                <p className="my-8 sm:my-10 text-sm sm:text-base sm:leading-normal text-black/65">
+                <p className="my-8 sm:my-10 text-[0.82rem] sm:leading-normal text-black/65">
                   {data.a}
                 </p>
               )}
@@ -308,12 +308,12 @@ export const TrackingUI = () => {
       )}
 
       {!loading && error && (
-        <div className="w-full max-w-2xl mb-3 mx-auto text-sm">
+        <div className="w-11/12 max-w-2xl mb-3 mx-auto text-sm">
           {faq.faqNotFound.map((data, i) => (
             <div className="py-4 border-b border-[#cacaca]" key={i}>
               <h3
                 onClick={() => toggleQA(i)}
-                className="sm:text-sm flex justify-between items-center cursor-default leading-tight sm:leading-normal hover:text-[#d40511] group"
+                className="font-bold flex justify-between items-center cursor-default leading-tight sm:leading-normal hover:text-[#d40511] group"
               >
                 <span>{data.q}</span>
                 <span className="ml-10">
@@ -325,7 +325,7 @@ export const TrackingUI = () => {
                 </span>
               </h3>
               {activeQA === i && (
-                <p className="my-8 sm:my-10 text-sm sm:text-base sm:leading-normal text-black/65">
+                <p className="my-8 sm:my-10 text-[0.82rem] sm:leading-normal text-black/65">
                   {data.a}
                 </p>
               )}

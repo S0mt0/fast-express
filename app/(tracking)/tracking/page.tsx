@@ -3,9 +3,11 @@ import { TrackingUI } from "../_components";
 
 const TrackingPage = () => {
   return (
-    <Suspense>
-      <TrackingUI />
-    </Suspense>
+    <main className="py-44 sm:pt-52">
+      <Suspense>
+        <TrackingUI />
+      </Suspense>
+    </main>
   );
 };
 

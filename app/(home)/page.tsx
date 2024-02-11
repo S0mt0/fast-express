@@ -3,9 +3,9 @@ import {
   FormSection,
   AchievementSection,
   TeamSection,
-  // FeaturesSection,
   OnboardingSection,
   onboardingData,
+  // FeaturesSection,
 } from "./_components";
 
 const HomePage = () => {

@@ -41,7 +41,7 @@ export const useFetchShipmentFunc = (query?: string) => {
 
         onFetchShipmentSuccess(data?.data?.shipment as TShipment);
       } catch (error: any) {
-        console.log(error?.response?.data);
+        // console.log(error?.response?.data);
         onFetchShipmentError(error?.response?.data?.data?.trackingId as string);
       } finally {
         closeMenu();
@@ -54,13 +54,6 @@ export const useFetchShipmentFunc = (query?: string) => {
       onFetchShipmentSuccess,
     ]
   );
-
-  //   const handleInputChange = (input: string) => {
-  //     shipDispatch({
-  //       type: ShipmentActions.SET_TRACKING_NUMBER,
-  //       payload: input,
-  //     });
-  //   };
 
   return {
     fetchShipment,

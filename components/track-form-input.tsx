@@ -2,18 +2,24 @@
 
 // import { Truck } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useFetchShipmentFunc, useMobileMenuStore } from "../../../sdk/hooks";
+import { useFetchShipmentFunc, useMobileMenuStore } from "../sdk/hooks";
 import { FormEvent } from "react";
 import { cn } from "@/lib/utils";
 
-export const TrackFormInput = () => {
+export const TrackFormInput = ({
+  handleSubmit,
+  styles,
+}: {
+  handleSubmit?: (e: FormEvent<HTMLFormElement>) => void;
+  styles?: string;
+}) => {
   const router = useRouter();
   const query = useSearchParams().get("tracking-id")?.trim();
 
   const { trackingNumber, setTrackingNumber } = useFetchShipmentFunc(query);
   const { closeMenu } = useMobileMenuStore();
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleLocalSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push(`/tracking?tracking-id=${trackingNumber.trim()}`);
     query?.trim() === trackingNumber.trim() && closeMenu();
@@ -21,10 +27,12 @@ export const TrackFormInput = () => {
 
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={
+        handleSubmit ? (e) => handleSubmit(e) : (e) => handleLocalSubmit(e)
+      }
       className={cn(
-        "w-full flex flex-col sm:flex-row bg-white h-20 sm:h-12 items-center"
-        // styles
+        "w-full flex flex-col sm:flex-row bg-white h-20 sm:h-12 items-center",
+        styles
       )}
       id="no-print"
     >
@@ -42,7 +50,7 @@ export const TrackFormInput = () => {
         {/* <Truck className="absolute left-2 text-stone-600/75 w-5 h-5 top-0 translate-y-1/2" /> */}
       </div>
       <button
-        type="button"
+        type="submit"
         disabled={!trackingNumber.trim()}
         className="flex-1 w-full sm:flex-[0.15] cursor-pointer h-full font-semibold text-sm font-title capitalize sm:uppercase bg-green-700 text-white hover:bg-green-700/95 transition-colors"
       >

@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { Title } from "@/components/title";
 import { TrackFormInputFallback } from "@/components/track-form-input-fallback";
 import { SectionWrapper } from ".";
-import { TrackFormInput } from "./track-form-input";
+import { TrackFormInput } from "@/components/track-form-input";
 
 export const FormSection = () => {
   return (

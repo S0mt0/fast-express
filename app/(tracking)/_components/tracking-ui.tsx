@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import moment from "moment";
@@ -12,13 +12,20 @@ import { Event, EventStatus, faq } from ".";
 import { formatLocalTime } from "../../../sdk/utils";
 import { PrintButton } from "@/components/print-button";
 import { cn } from "@/lib/utils";
-import { TrackFormInput } from "./track-form-input";
+import { TrackFormInput } from "@/components/track-form-input";
 
 export const TrackingUI = () => {
   const trackingId = useSearchParams().get("tracking-id")?.trim();
 
-  const { fetchShipment, error, loading, shipment, success, unknownShipment } =
-    useFetchShipmentFunc();
+  const {
+    fetchShipment,
+    error,
+    loading,
+    shipment,
+    success,
+    unknownShipment,
+    trackingNumber,
+  } = useFetchShipmentFunc();
 
   useEffect(() => {
     trackingId && fetchShipment(trackingId);
@@ -38,6 +45,11 @@ export const TrackingUI = () => {
     setActiveQA((prev) => (prev === index ? -1 : index));
   };
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    fetchShipment(trackingNumber!);
+  };
+
   return (
     <div>
       <div className="my-10 mx-7 bg-white px-6">
@@ -47,7 +59,7 @@ export const TrackingUI = () => {
       </div>
       <div className="bg-[#f2f2f2] min-h-[40%] py-7 px-6">
         <div className="w-full max-w-xl mx-auto">
-          <TrackFormInput />
+          <TrackFormInput handleSubmit={(e) => handleSubmit(e)} />
         </div>
         {loading ? (
           <div className="mt-14 mb-6 flex justify-center items-center">

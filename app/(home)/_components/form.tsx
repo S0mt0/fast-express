@@ -7,7 +7,7 @@ import { TrackFormInput } from "@/components/track-form-input";
 
 export const FormSection = () => {
   return (
-    <section className=" gradient-bg-1">
+    <section className="gradient-bg-1">
       <SectionWrapper>
         <Title className="mb-12 mx-auto" mode="light" variant={"center"}>
           <h2 className="text-white text-center sm:text-xl md:text-3xl">
@@ -15,7 +15,7 @@ export const FormSection = () => {
           </h2>
         </Title>
         <Suspense fallback={<TrackFormInputFallback />}>
-          <TrackFormInput />
+          <TrackFormInput rounded={true} />
         </Suspense>
       </SectionWrapper>
     </section>

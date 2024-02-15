@@ -57,12 +57,12 @@ export const TrackingUI = () => {
           {!error ? "Track: Express" : "Track & Trace"}
         </h2>
       </div>
-      <div className="bg-[#222222] min-h-[40%] py-12 px-6">
+      <div className="bg-[#eeeeee] py-12 px-6">
         <div className="w-full max-w-xl mx-auto">
           <TrackFormInput handleSubmit={(e) => handleSubmit(e)} />
         </div>
         {loading ? (
-          <div className="mt-12 flex justify-center items-center">
+          <div className="mt-12 pb-4 flex justify-center items-center">
             <Image
               width={50}
               height={50}
@@ -281,7 +281,7 @@ export const TrackingUI = () => {
       )}
 
       {!loading && success && (
-        <div className="w-11/12 max-w-2xl mb-3 mx-auto text-sm">
+        <div className="w-10/12 max-w-2xl mb-3 mx-auto text-sm">
           {faq.faqSuccess.map((data, i) => (
             <div className="py-4 border-b border-[#cacaca]" key={i}>
               <h3
@@ -308,7 +308,7 @@ export const TrackingUI = () => {
       )}
 
       {!loading && error && (
-        <div className="w-11/12 max-w-2xl mb-3 mx-auto text-sm">
+        <div className="w-10/12 max-w-2xl mb-3 mx-auto text-sm">
           {faq.faqNotFound.map((data, i) => (
             <div className="py-4 border-b border-[#cacaca]" key={i}>
               <h3

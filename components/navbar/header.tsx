@@ -16,7 +16,10 @@ export const Header = () => {
         {/* logo */}
         <Logo />
       </div>
-      <nav className="w-[90%] sm:w-[95%] max-w-[560px] md:max-w-[1280px] xl:max-w-[1280px] ml-auto flex items-center justify-center bg-[#eeeeee] polygon">
+      <nav
+        className="w-[90%] sm:w-[95%] max-w-[560px] md:max-w-[1280px] xl:max-w-[1280px] ml-auto flex items-center justify-center bg-[#eeeeee] polygon"
+        id="no-print"
+      >
         <ul className="w-full hidden md:flex items-center h-16 justify-center gap-8 border-b-4 border-[#bdbbbb]">
           {/* navigation links */}
           {navLinks.map(({ href, title }) => (

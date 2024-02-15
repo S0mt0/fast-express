@@ -42,7 +42,7 @@ export const HeroSection = ({ interval = 11500 }: { interval?: number }) => {
         />
         <div
           className={cn(
-            "absolute inset-0 h-full z-20 font-title flex flex-col justify-center p-8 sm:p-10 md:p-14",
+            "absolute inset-0 h-full z-20 font-title flex flex-col justify-center p-6 sm:p-8 md:p-12",
             currentImage === 0 ? "items-start" : "items-end"
           )}
           key="text"
@@ -73,7 +73,7 @@ export const HeroSection = ({ interval = 11500 }: { interval?: number }) => {
           </div>
         </div>
       </AnimatePresence>
-      <div className="absolute inset-0 bg-black/50 sm:bg-black/40" />
+      <div className="absolute inset-0 bg-black/60 sm:bg-black/50" />
     </section>
   );
 };

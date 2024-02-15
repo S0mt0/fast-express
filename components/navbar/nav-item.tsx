@@ -1,7 +1,9 @@
 "use client";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+import { cn } from "@/lib/utils";
+import { useMobileMenuStore } from "../../sdk/hooks";
 
 interface NavItemProps {
   href: string;
@@ -10,6 +12,8 @@ interface NavItemProps {
 }
 export const NavItem = ({ href, title, style }: NavItemProps) => {
   const path = usePathname();
+  const { closeMenu } = useMobileMenuStore();
+
   return (
     <li key={href} className="md:h-full">
       <Link
@@ -19,6 +23,7 @@ export const NavItem = ({ href, title, style }: NavItemProps) => {
           path === href && "text-green-700",
           style
         )}
+        onClick={closeMenu}
       >
         {title}
         {/* active and hover states green-underline visible on medium devices only */}

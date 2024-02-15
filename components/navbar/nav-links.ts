@@ -5,7 +5,7 @@ export const navLinks = [
   },
   {
     title: "about us",
-    href: "/abous-us",
+    href: "/about-us",
   },
   {
     title: "services",

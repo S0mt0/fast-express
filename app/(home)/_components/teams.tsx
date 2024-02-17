@@ -1,6 +1,6 @@
-import { Title } from "@/components/title";
-import { SectionWrapper } from ".";
 import Image from "next/image";
+import { SectionWrapper } from "@/components/dark-section-wrapper";
+import { Title } from "@/components/title";
 
 export const TeamSection = () => {
   return (

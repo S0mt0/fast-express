@@ -48,7 +48,7 @@ export const TrackFormInput = ({
         value={trackingNumber}
         onChange={(e) => setTrackingNumber(e.target.value)}
         className={cn(
-          "border shadow-sm border-stone-100 outline-none px-[15px] appearance-none placeholder:capitalize text-base w-full h-10 sm:flex-[0.85] bg-white flex items-center justify-center",
+          "border  border-stone-300 outline-none px-[15px] appearance-none placeholder:capitalize text-base w-full h-10 sm:flex-[0.85] bg-white flex items-center justify-center",
           rounded && "rounded-lg sm:rounded-none"
         )}
       />

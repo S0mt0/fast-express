@@ -20,6 +20,7 @@ export const SectionWrapper = ({
     backgroundColor: `rgba(0, 0, 0, 0.75)`,
     // Add other styles if needed
   };
+
   return (
     <section style={style} className={cn(className)}>
       <div

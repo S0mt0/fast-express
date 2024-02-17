@@ -14,9 +14,9 @@ export const AboutUsSection = () => {
       </div>
       <div className=" flex-1">
         <Title className="mb-8">
-          <h1 className="text-3xl text-black/90">about us</h1>
+          <h1 className="text-2xl sm:text-3xl text-black/90">about us</h1>
         </Title>
-        <p className="text-stone-700/80">
+        <p className="text-stone-700/80 text-sm sm:text-base">
           Fast Express Courier offers a host of logistic management services and
           supply chain solutions. We provide innovative solutions with the best
           people, processes, and technology. With over 60 years of providing
@@ -26,7 +26,7 @@ export const AboutUsSection = () => {
           dynamic and customer centric asset based provider, we feel we bring a
           total solution.
         </p>
-        <p className="text-stone-700/80 mt-4">
+        <p className="text-stone-700/80 mt-4 text-sm sm:text-base">
           We offer a wide range of parcel collection and drop off services,
           including expedited and premium options to ensure maximum flexibility
           for our customers.

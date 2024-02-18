@@ -42,7 +42,7 @@ export const CheckoutForm = () => {
   };
 
   return (
-    <section className="pt-40 px-6">
+    <section className="pt-28 sm:pt-40 px-6">
       <div className="w-full max-w-[800px] mx-auto">
         <div className="rounded-tl-lg rounded-tr-lg px-4 py-5 bg-green-700">
           <h3 className="border-b capitalize font-bold pb-1 text-orange-300">
@@ -81,7 +81,7 @@ export const CheckoutForm = () => {
           className="w-full rounded-lg mt-6 bg-stone-100"
           onSubmit={(e) => handleSubmit(e)}
         >
-          <div className="flex flex-col-reverse sm:flex-row border-b p-4 w-full justify-between">
+          <div className="flex flex-col-reverse sm:flex-row border-b p-4 w-full justify-between gap-4">
             <div className="flex gap-2 items-center text-sm font-medium">
               <CreditCard className="h-5 w-5 text-stone-700" />
               Credit or debit
@@ -224,7 +224,7 @@ export const CheckoutForm = () => {
             </div>
 
             {/* terms and conditions */}
-            <div>
+            <div className="pb-4">
               <p className="text-stone-700/90 text-[0.7rem]">
                 By utilizing FastExpress-courier logistics services, you
                 acknowledge and expressly agree to adhere to the{" "}

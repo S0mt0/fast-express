@@ -36,7 +36,7 @@ export const EventStatus = ({ status }: { status: TShipment["status"] }) => {
           <small className="text-[0.7rem] inline-block mt-[8rem] leading-normal">
             To redeem your shipment, kindly{" "}
             <Link
-              href="/checkout"
+              href="/redeem-shipment"
               className="underline text-[#d40511] font-medium"
             >
               PAY EXTRA COST OF SHIPPING

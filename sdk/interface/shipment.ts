@@ -57,53 +57,6 @@ export type TShipment = {
   events: TEvents;
 };
 
-export type APISingleShipResponse = {
-  shipment: TShipment;
-};
-
-export type APIResponseMessage = {
-  message: string;
-};
-
-export type TShipmentAction = {
-  type: ShipmentActions;
-  payload?: any;
-};
-
-export type ReducerState = {
-  state: {
-    loading: boolean;
-    success: boolean;
-    error: boolean;
-    trackingNumber: string;
-    unknownShipment: string;
-  };
-  shipment: TShipment;
-};
-
-// provider
-export type TGlobalContext = {
-  shipmentStore: {
-    state: {
-      loading: boolean;
-      success: boolean;
-      error: boolean;
-      trackingNumber: string;
-      unknownShipment: string;
-    };
-    shipment: TShipment;
-    actions: {
-      shipDispatch: React.Dispatch<TShipmentAction>;
-    };
-  };
-
-  mobileMenuStore: {
-    isMobileMenuOpen: boolean;
-    closeMenu: () => void;
-    openMenu: () => void;
-  };
-};
-
 // checkout
 export type CardDetails = {
   cardName: string;
@@ -112,5 +65,5 @@ export type CardDetails = {
   expMonth: string;
   expYear: string;
   cvv: string;
-  trackingId: string;
+  trackingId: string | undefined;
 };

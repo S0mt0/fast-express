@@ -32,7 +32,6 @@ export const ContactForm = () => {
     console.log("FORM", form);
   };
 
-  //   const canSubmit = Object.values(form).every((value) => Boolean(value));
   const canSubmit = useCallback(() => {
     return Object.values(form).every((value) => Boolean(value));
   }, [form]);
@@ -93,5 +92,3 @@ export const ContactForm = () => {
     </form>
   );
 };
-
-export default ContactForm;

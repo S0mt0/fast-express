@@ -16,6 +16,7 @@ export const useShipmentServices = () => {
     setSuccess(true);
     setError(false);
     setShipment(shipment);
+    localStorage.setItem("shipment", JSON.stringify(shipment));
   };
 
   const onFetchShipmentError = (trackingNumber: string) => {
@@ -24,6 +25,7 @@ export const useShipmentServices = () => {
     setError(true);
     setShipment(null);
     setUnknownShipment(trackingNumber);
+    localStorage.removeItem("shipment");
   };
 
   return {

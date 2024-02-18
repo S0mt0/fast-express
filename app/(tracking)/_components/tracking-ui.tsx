@@ -181,7 +181,7 @@ export const TrackingUI = () => {
                       // col2
                       <p className="flex-[0.6] leading-normal">
                         <Link
-                          href={"/checkout"}
+                          href={"/redeem-shipment"}
                           className="text-white text-sm font-semibold inline-flex items-center gap-2 bg-[#d40511] rounded-sm py-2 px-4"
                         >
                           <span>Redeem Shipment</span> <Newspaper />

@@ -21,7 +21,7 @@ export const OtherServiceItem = ({
     <div key={i} className="border border-white/70">
       <h2
         className={cn(
-          "cursor-pointer py-3 px-4 bg-white text-green-700 uppercase font-bold flex justify-between font-title text-sm",
+          "cursor-pointer py-3 px-4 bg-white text-green-700 uppercase font-bold flex items-center justify-between font-title text-sm",
           active === i && "bg-green-700 text-white"
         )}
         onClick={() => onClick(i)}

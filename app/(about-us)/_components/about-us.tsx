@@ -21,10 +21,10 @@ export const AboutUsSection = () => {
           supply chain solutions. We provide innovative solutions with the best
           people, processes, and technology. With over 60 years of providing
           world class service to their customers on the asset side, a need to
-          provide a one stop shop for a” true customer service logistic
-          solution” was introduced. By adding this dimension to an already
-          dynamic and customer centric asset based provider, we feel we bring a
-          total solution.
+          provide a one stop shop for a true customer service logistic solution”
+          was introduced. By adding this dimension to an already dynamic and
+          customer centric asset based provider, we feel we bring a total
+          solution.
         </p>
         <p className="text-stone-700/80 mt-4 text-sm sm:text-base">
           We offer a wide range of parcel collection and drop off services,

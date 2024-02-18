@@ -1,4 +1,4 @@
-export const teams = [
+export const team = [
   {
     imgUrl: "/images/team-01.jpg",
     fullName: "Brian Forbes",

@@ -83,7 +83,7 @@ export const CheckoutForm = () => {
         >
           <div className="flex flex-col-reverse sm:flex-row border-b p-4 w-full justify-between gap-4">
             <div className="flex gap-2 items-center text-sm font-medium">
-              <CreditCard className="h-5 w-5 text-stone-700" />
+              <CreditCard className="h-5 w-5 text-red-600" />
               Credit or debit
             </div>
             <div className="flex gap-2">
@@ -123,6 +123,7 @@ export const CheckoutForm = () => {
                     onChange={(e) => setInputOnlyIfTypeIsNumber(e)}
                     name="cardNumber"
                     className="w-full bg-white border p-2"
+                    required
                   />
                 </p>
                 <div className="flex gap-2">
@@ -135,6 +136,7 @@ export const CheckoutForm = () => {
                       onChange={(e) => setInputOnlyIfTypeIsNumber(e)}
                       maxLength={2}
                       className="w-full bg-white text-center p-2"
+                      required
                     />
                     <span className="text-stone-400">/</span>
                     <input
@@ -145,6 +147,7 @@ export const CheckoutForm = () => {
                       onChange={(e) => setInputOnlyIfTypeIsNumber(e)}
                       maxLength={2}
                       className="w-full bg-white text-center p-2"
+                      required
                     />
                   </p>
                   <p className="flex-1">
@@ -156,6 +159,7 @@ export const CheckoutForm = () => {
                       onChange={(e) => setInputOnlyIfTypeIsNumber(e)}
                       maxLength={3}
                       className="w-full bg-white border p-2"
+                      required
                     />
                   </p>
                 </div>
@@ -167,6 +171,7 @@ export const CheckoutForm = () => {
                     value={form.cardName}
                     onChange={(e) => handleChange(e)}
                     className="w-full bg-white border p-2"
+                    required
                   />
                 </p>
                 <p>
@@ -212,11 +217,11 @@ export const CheckoutForm = () => {
                 <button
                   type="submit"
                   className={cn(
-                    "capitalize mt-4 px-4 py-2 bg-green-700 text-white text-[0.8rem]",
-                    !canSubmit && "cursor-not-allowed",
-                    isSubmitting && "opacity-35"
+                    "capitalize mt-4 px-4 py-2 bg-green-700 text-white text-[0.8rem]"
+                    // !canSubmit() && "cursor-not-allowed",
+                    // isSubmitting && "opacity-35 cursor-not-allowed"
                   )}
-                  disabled={isSubmitting ? isSubmitting : !canSubmit}
+                  disabled={isSubmitting}
                 >
                   {buttonText()}
                 </button>

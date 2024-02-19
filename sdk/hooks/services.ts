@@ -122,7 +122,10 @@ export const useCheckoutFormData = () => {
     }
   };
 
-  const canSubmit = Object.values(form).every((field) => field?.trim() !== "");
+  // const canSubmit = Object.values(form).every((field) => field?.trim() !== "");
+  const canSubmit = useCallback(() => {
+    return Object.values(form).every((value) => Boolean(value?.trim()));
+  }, [form]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

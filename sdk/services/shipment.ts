@@ -26,7 +26,7 @@ export const useShipmentServices = () => {
     setError(true);
     setShipment(null);
     setUnknownShipment(trackingNumber);
-    localStorage.removeItem("shipment");
+    // localStorage.removeItem("shipment");
   };
 
   return {

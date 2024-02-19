@@ -16,7 +16,7 @@ export const useFetchShipmentFunc = (query?: string) => {
     setTrackingNumber,
     trackingNumber,
     unknownShipment,
-    shipment,
+    shipment: _shipment,
     success,
     error,
     loading,
@@ -61,6 +61,11 @@ export const useFetchShipmentFunc = (query?: string) => {
     ]
   );
 
+  const shipment =
+    _shipment || typeof window !== "undefined"
+      ? (JSON.parse(localStorage.getItem("shipment")!) as TShipment | null)
+      : null;
+
   return {
     fetchShipment,
     shipment,
@@ -79,8 +84,10 @@ export const useCheckoutFormData = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
 
+  const { shipment: _shipment } = useShipmentStore();
+
   const shipment =
-    typeof window !== "undefined"
+    _shipment || typeof window !== "undefined"
       ? (JSON.parse(localStorage.getItem("shipment")!) as TShipment | null)
       : null;
 

@@ -20,6 +20,7 @@ export interface IShipmentStore {
 
 export interface IMobileMenuStore {
   mobileMenuIsOpen: boolean;
+
   openMenu: () => void;
   closeMenu: () => void;
   toggleMenu: () => void;

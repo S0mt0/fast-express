@@ -72,36 +72,36 @@ export const TrackingUI = () => {
             />
           </div>
         ) : success && shipment ? (
-          <div className="w-full max-w-[810px] mx-auto mt-6 shadow-sm border border-stone-300 rounded-[3px] bg-white">
+          <div className="w-full max-w-[810px] mx-auto mt-6 shadow-sm border border-stone-300 rounded-[3px] bg-white font-medium">
             {/* 1 */}
-            <div className="flex justify-between flex-col md:flex-row gap-y-6 gap-x-4 p-4 border-b border-[#1d1d1d8a] sm:p-6">
+            <div className="flex justify-between flex-col md:flex-row gap-y-6 gap-x-4 p-4 border-b border-stone-300 sm:p-6">
               <div>
                 <p className="text-[0.8rem] mb-[1.1rem]">
                   Tracking Code: {shipment.trackingId}
                 </p>
                 <p className="text-[0.8rem] mb-[1.1rem]">
                   This shipment is handled by:{" "}
-                  <span className="font-semibold">Fastexpress-Courier</span>
+                  <span className="font-bold">Fastexpress-Courier</span>
                 </p>
               </div>
               <PrintButton />
             </div>
             {/* - 2*/}
-            <div className="p-4 sm:p-6 border-b border-[#1d1d1d8a]">
-              <h2
+            <div className="p-4 sm:p-6 border-b border-stone-300">
+              <p
                 className={cn(
-                  "sm:text-[1.1rem] md:text-xl flex justify-between items-center cursor-default leading-normal capitalize mb-2 hover:text-[#eb131e] text-base ",
+                  "sm:text-[1.1rem] md:text-xl flex justify-between items-center cursor-default leading-normal capitalize mb-2 hover:text-red-500 text-[0.75rem] font-bold ",
                   shipment.status.status === "delivered"
                     ? "text-[#67A31D]"
                     : shipment.status.status === "pending"
                     ? "text-[#6b6b6b]"
                     : shipment.status.status === "shipping"
                     ? "text-[#aaaaaa]"
-                    : "text-[#d40511]"
+                    : "text-red-600"
                 )}
               >
                 {shipment.status.status}
-              </h2>
+              </p>
 
               <p className="text-[0.7rem] sm:text-[0.8rem] block leading-normal mb-[0.8rem]">
                 {moment(shipment.status.timestamp).format("LL")}{" "}
@@ -121,9 +121,9 @@ export const TrackingUI = () => {
               </div>
 
               <div className="grid w-full grid-cols-3 my-2 gap-[6px]">
-                <div className="w-full h-2 bg-#32832bd3 relative before:absolute before:content-[''] before:left-0 before:bottom-0 before:w-2 before:h-[0.9rem] before:bg-inherit before:rounded-br-lg" />
-                <div className="w-full h-2 bg-#32832bd3 rounded-tr-lg rounded-br-lg" />
-                <div className="w-full h-2 bg-#32832bd3 rounded-tr-lg relative before:absolute before:content-[''] before:right-0 before:top-0 before:w-2 before:h-[0.9rem] before:bg-inherit before:rounded-tr-lg" />
+                <div className="w-2 h-full bg-#32832bd3 relative before:absolute before:content-[''] before:left-0 before:bottom-0 before:w-2 before:h-[0.9rem] before:bg-inherit before:rounded-br-lg" />
+                <div className="w-2 h-full bg-#32832bd3 rounded-tr-lg rounded-br-lg" />
+                <div className="w-2 h-full bg-#32832bd3 rounded-tr-lg relative before:absolute before:content-[''] before:right-0 before:top-0 before:w-2 before:h-[0.9rem] before:bg-inherit before:rounded-tr-lg" />
               </div>
 
               <div className="text-center">
@@ -136,17 +136,17 @@ export const TrackingUI = () => {
               </div>
             </div>
             {/* -3 */}
-            <div className="p-6 border-b border-[#1d1d1d8a]">
+            <div className="p-6 border-b border-stone-300">
               <h3
                 onClick={() => toggleTab("a")}
-                className="text-[1.2rem] flex justify-between flex-row items-center cursor-default leading-normal capitalize text-base sm:text-[1.1rem] md:text-[1.2rem] hover:text-[#eb131e]"
+                className="text-[1.2rem] flex justify-between flex-row items-center cursor-default leading-normal capitalize text-base sm:text-[1.1rem] md:text-[1.2rem] hover:text-red-500"
               >
                 <span>More Shipment Details</span>
                 <span className="ml-10">
                   {activeTab.a ? (
-                    <ChevronUp className="hover:text-[#eb131e] text-[#d40511]" />
+                    <ChevronUp className="hover:text-red-500 text-red-600" />
                   ) : (
-                    <ChevronDown className="hover:text-[#eb131e] text-[#d40511]" />
+                    <ChevronDown className="hover:text-red-500 text-red-600" />
                   )}
                 </span>
               </h3>
@@ -182,7 +182,7 @@ export const TrackingUI = () => {
                       <p className="flex-[0.6] leading-normal">
                         <Link
                           href={"/redeem-shipment"}
-                          className="text-white text-sm font-semibold inline-flex items-center gap-2 bg-[#d40511] rounded-sm py-2 px-4"
+                          className="text-white text-sm font-semibold inline-flex items-center gap-2 bg-red-600 rounded-sm py-2 px-4"
                         >
                           <span>Redeem Shipment</span> <Newspaper />
                         </Link>
@@ -193,17 +193,17 @@ export const TrackingUI = () => {
               )}
             </div>
             {/* - 4*/}
-            <div className="p-6 border-b border-[#1d1d1d8a]">
+            <div className="p-6 border-b border-stone-300">
               <h3
                 onClick={() => toggleTab("b")}
-                className="text-[1.2rem] flex justify-between flex-row items-center cursor-default leading-normal capitalize text-base sm:text-[1.1rem] md:text-[1.2rem] hover:text-[#eb131e]"
+                className="text-[1.2rem] flex justify-between flex-row items-center cursor-default leading-normal capitalize text-base sm:text-[1.1rem] md:text-[1.2rem] hover:text-red-500"
               >
                 <span>All Shipment Updates</span>
                 <span className="ml-10">
                   {activeTab.b ? (
-                    <ChevronUp className="hover:text-[#eb131e] text-[#d40511]" />
+                    <ChevronUp className="hover:text-red-500 text-red-600" />
                   ) : (
-                    <ChevronDown className="hover:text-[#eb131e] text-[#d40511]" />
+                    <ChevronDown className="hover:text-red-500 text-red-600" />
                   )}
                 </span>
               </h3>
@@ -218,7 +218,7 @@ export const TrackingUI = () => {
               )}
             </div>
           </div>
-        ) : (
+        ) : trackingId && trackingNumber ? (
           <div className="w-full max-w-[810px] mx-auto mt-6 rounded-[3px] bg-white shadow-sm border border-stone-300">
             <div className="flex gap-2 sm:gap-[1.7rem] border-none p-4">
               <div>
@@ -233,10 +233,10 @@ export const TrackingUI = () => {
               </div>
             </div>
           </div>
-        )}
+        ) : null}
       </div>
 
-      {!loading && (
+      {!loading && trackingId && trackingNumber && (
         <div className="w-11/12 max-w-2xl mx-auto text-center mt-4 p-4 border-b border-[]#cacaca">
           <p className="leading-normal mb-9 text-[0.8rem] sm:text-[0.9rem] font-semibold">
             If you would prefer to speak to someone personally about the
@@ -245,7 +245,7 @@ export const TrackingUI = () => {
             <a
               href="mailto:FastExpress Courier@gmail.com"
               rel="noreferrer noopener"
-              className="underline text-[#d40511]"
+              className="underline text-red-600"
             >
               contact FastExpress-Courier Customer Service
             </a>
@@ -263,14 +263,14 @@ export const TrackingUI = () => {
             <div className="py-4 border-b border-[#cacaca]" key={i}>
               <h3
                 onClick={() => toggleQA(i)}
-                className="font-bold flex justify-between items-center cursor-default leading-tight sm:leading-normal hover:text-[#d40511] group"
+                className="font-bold flex justify-between items-center cursor-default leading-tight sm:leading-normal hover:text-red-600 group"
               >
                 <span>{data.q}</span>
                 <span className="ml-10">
                   {activeQA === i ? (
-                    <ChevronUp className="group-hover:text-red-600 text-lg text-[#d40511]" />
+                    <ChevronUp className="group-hover:text-red-600 text-lg text-red-600" />
                   ) : (
-                    <ChevronDown className="group-hover:text-red-600 text-lg text-[#d40511]" />
+                    <ChevronDown className="group-hover:text-red-600 text-lg text-red-600" />
                   )}
                 </span>
               </h3>
@@ -290,14 +290,14 @@ export const TrackingUI = () => {
             <div className="py-4 border-b border-[#cacaca]" key={i}>
               <h3
                 onClick={() => toggleQA(i)}
-                className="font-bold flex justify-between items-center cursor-default leading-tight sm:leading-normal hover:text-[#d40511] group"
+                className="font-bold flex justify-between items-center cursor-default leading-tight sm:leading-normal hover:text-red-600 group"
               >
                 <span>{data.q}</span>
                 <span className="ml-10">
                   {activeQA === i ? (
-                    <ChevronUp className="group-hover:text-red-600 text-lg text-[#d40511]" />
+                    <ChevronUp className="group-hover:text-red-600 text-lg text-red-600" />
                   ) : (
-                    <ChevronDown className="group-hover:text-red-600 text-lg text-[#d40511]" />
+                    <ChevronDown className="group-hover:text-red-600 text-lg text-red-600" />
                   )}
                 </span>
               </h3>

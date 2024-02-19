@@ -17,6 +17,7 @@ export const useShipmentServices = () => {
     setError(false);
     setShipment(shipment);
     localStorage.setItem("shipment", JSON.stringify(shipment));
+    localStorage.setItem("trackingId", JSON.stringify(shipment.trackingId));
   };
 
   const onFetchShipmentError = (trackingNumber: string) => {

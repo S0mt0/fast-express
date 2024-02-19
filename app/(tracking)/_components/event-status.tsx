@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export const EventStatus = ({ status }: { status: TShipment["status"] }) => {
   return (
     <article className="flex border-b border-[#1d1d1d8a] last-of-type:border-none">
-      <div className="flex-[0.3] py-[0.9rem]">
+      <div className="flex-[0.3] py-[0.9rem] pr-[4%]">
         <small className="text-[0.8rem] block leading-normal">
           {moment(status.timestamp).format("dddd")}
         </small>
@@ -23,7 +23,7 @@ export const EventStatus = ({ status }: { status: TShipment["status"] }) => {
         <strong
           className={cn(
             "text-[0.8rem] block leading-normal",
-            status.status === "delivered" && "text-[#67a31d]"
+            status.status === "delivered" && "text-green-600"
           )}
         >
           {status.description}
@@ -33,24 +33,24 @@ export const EventStatus = ({ status }: { status: TShipment["status"] }) => {
         </p>
         {/*  */}
         {status.status === "seized" && (
-          <small className="text-[0.7rem] inline-block mt-[8rem] leading-normal">
+          <small className="text-[0.7rem] inline-block mt-16 leading-normal">
             To redeem your shipment, kindly{" "}
             <Link
               href="/redeem-shipment"
-              className="underline text-[#d40511] font-medium"
+              className="underline text-red-600 font-medium"
             >
               PAY EXTRA COST OF SHIPPING
             </Link>
           </small>
         )}
         {/*  */}
-        <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-[65%]">
           {status.status === "delivered" ? (
-            <CheckCircle2 fill="#67A31D" className="text-base sm:text-2xl" />
+            <CheckCircle2 className="w-5 h-5 text-green-600" />
           ) : status.status === "seized" ? (
-            <AlertTriangle fill="#d40511" className="text-base sm:text-2xl" />
+            <AlertTriangle className="text-base w-5 h-5 text-red-600" />
           ) : (
-            <BusFront fill="#868686" className="text-base sm:text-2xl" />
+            <BusFront className="w-5 h-5 text-stone-500" />
           )}
         </span>
         {/*  */}

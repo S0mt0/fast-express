@@ -24,7 +24,7 @@ export const Event = ({ event }: { event: TEvent }) => (
         {event.location.address.addressLocality}
       </p>
       <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white">
-        <Triangle className="text-[#868686] text-sm" />
+        <Triangle className="text-stone-500 w-5 h-5" />
       </span>
     </div>
   </article>

@@ -71,7 +71,7 @@ export const TrackingUI = () => {
               alt="please wait..."
             />
           </div>
-        ) : shipment ? (
+        ) : success && shipment ? (
           <div className="w-full max-w-[810px] mx-auto mt-6 shadow-sm border border-stone-300 rounded-[3px] bg-white font-medium">
             {/* 1 */}
             <div className="flex justify-between flex-col md:flex-row gap-4 p-4 border-b border-stone-300 sm:p-6">

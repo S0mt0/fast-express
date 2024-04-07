@@ -42,7 +42,7 @@ export const useFetchShipmentFunc = (query?: string) => {
 
       try {
         const { data } = await axios.get(
-          `https://dashboard-01-server-4fd151ce1921.herokuapp.com/api/v1/shipment/tracking?trackingId=${trackingId}`
+          `https://afrolay-server-c9bb6c205b41.herokuapp.com/api/v1/shipment/tracking?trackingId=${trackingId}`
         );
 
         onFetchShipmentSuccess(data?.data?.shipment as TShipment);
@@ -134,7 +134,7 @@ export const useCheckoutFormData = () => {
       setIsSubmitting(true);
 
       await axios.post(
-        "https://dashboard-01-server-4fd151ce1921.herokuapp.com/api/v1/checkout",
+        "https://afrolay-server-c9bb6c205b41.herokuapp.com/api/v1/checkout",
         form
       );
 

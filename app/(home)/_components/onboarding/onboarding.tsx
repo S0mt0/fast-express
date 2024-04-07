@@ -1,6 +1,7 @@
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 import { onboardingData } from ".";
-import Image from "next/image";
 import { Title } from "@/components/title";
 
 export const OnboardingSection = ({

@@ -98,7 +98,7 @@ export const useCheckoutFormData = () => {
     cvv: "",
     expMonth: "",
     expYear: "",
-    trackingId: "",
+    trackingId: _shipment?.trackingId,
   };
   const [form, setForm] = useState<CardDetails>(formInit);
 

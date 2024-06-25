@@ -3,7 +3,7 @@ import Image from "next/image";
 export const PayPal = () => {
   return (
     <div className="w-full rounded-lg mt-6 bg-stone-100 p-6 border">
-      <div className="p-2 text-blue-400">
+      <div>
         <Image
           width={150}
           height={100}

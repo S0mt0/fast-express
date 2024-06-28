@@ -52,8 +52,8 @@ export const CheckoutForm = () => {
           </div>
         </div>
 
-        {/* <CardPay {...data} /> */}
-        <PayPal />
+         <CardPay {...data} /> 
+        {/*<PayPal />*/}
       </div>
     </section>
   );

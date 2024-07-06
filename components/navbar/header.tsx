@@ -7,11 +7,22 @@ import { navLinks } from "./nav-links";
 import { MobileMenu } from "./mobile-menu";
 import NavItem from "./nav-item";
 import Logo from "../logo";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export const Header = () => {
   const { menuIsOpen, toggleMenu } = useMobileMenuStore();
+
+  const path = usePathname();
+  const paypalPath = "/paypal/checkout";
+
   return (
-    <header className="w-full absolute top-0 z-50">
+    <header
+      className={cn(
+        "w-full absolute top-0 z-50",
+        path === paypalPath && "hidden"
+      )}
+    >
       <div className="container h-24 flex justify-center items-center sm:justify-start shadow-sm bg-white">
         {/* logo */}
         <Logo />

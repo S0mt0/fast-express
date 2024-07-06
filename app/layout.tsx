@@ -7,7 +7,7 @@ import Footer from "@/components/footer/footer";
 const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FastExpress Courier - Global Logistics and International Shipping. ",
+  title: "FastExpress Courier - Global Logistics and International Shipping.",
   description:
     "FastExpress Courier is the global leader in the logistics industry. Specializing in international shipping, courier services and transportation.",
   icons: [{ url: "images/seo.jpg", href: "images/seo.jpg" }],

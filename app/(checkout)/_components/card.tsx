@@ -26,42 +26,9 @@ export const CardPay = (props: any) => {
   );
 
   return (
-    <form
-      className="w-full rounded-lg mt-6 bg-stone-100"
-      onSubmit={(e) => props.handleSubmit(e)}
-    >
-      <div className="flex flex-col-reverse sm:flex-row border-b p-4 w-full justify-between gap-4">
-        <div className="flex gap-2 items-center text-sm font-medium">
-          <CreditCard className="h-5 w-5 text-red-600" />
-          Credit or debit
-        </div>
-        <div className="flex gap-2">
-          <Image
-            src={"/images/discover.png"}
-            alt="credit card"
-            width={60}
-            height={20}
-            className="max-w-[200px] max-h-6 h-auto"
-          />
-          <Image
-            src={"/images/mastercard.png"}
-            alt="credit card"
-            width={60}
-            height={20}
-            className="max-w-[200px] max-h-6 h-auto"
-          />
-          <Image
-            src={"/images/visa.png"}
-            alt="credit card"
-            width={60}
-            height={20}
-            className="max-w-[200px] max-h-6 h-auto"
-          />
-        </div>
-      </div>
-
+    <form className="" onSubmit={(e) => props.handleSubmit(e)}>
       {/* form body */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4  mt-6">
         <div>
           <div className="flex flex-col gap-3">
             <p>
@@ -71,12 +38,12 @@ export const CardPay = (props: any) => {
                 value={props.form.cardNumber}
                 onChange={(e) => props.setInputOnlyIfTypeIsNumber(e)}
                 name="cardNumber"
-                className="w-full bg-white border p-2"
+                className="w-full bg-white border border-[#31556180] p-4"
                 required
               />
             </p>
             <div className="flex gap-2">
-              <p className="flex items-center border bg-white flex-1 justify-center">
+              <p className="flex items-center border bg-white flex-1 justify-center border-[#31556180]">
                 <input
                   type="text"
                   name="expMonth"
@@ -107,7 +74,7 @@ export const CardPay = (props: any) => {
                   value={props.form.cvv}
                   onChange={(e) => props.setInputOnlyIfTypeIsNumber(e)}
                   maxLength={3}
-                  className="w-full bg-white border p-2"
+                  className="w-full bg-white border border-[#31556180] p-4"
                   required
                 />
               </p>
@@ -119,7 +86,7 @@ export const CardPay = (props: any) => {
                 placeholder="Name on card"
                 value={props.form.cardName}
                 onChange={(e) => props.handleChange(e)}
-                className="w-full bg-white border p-2"
+                className="w-full bg-white border border-[#31556180] p-4"
                 required
               />
             </p>
@@ -131,7 +98,7 @@ export const CardPay = (props: any) => {
                 value={props.form.country}
                 name="country"
                 id="country"
-                className="w-full bg-white border p-2"
+                className="w-full bg-white border border-[#31556180] p-4"
               >
                 <option value={""}>Select country</option>
                 {countriesOptions.map((country) => (
@@ -146,19 +113,19 @@ export const CardPay = (props: any) => {
               <input
                 type="text"
                 placeholder="Postal code"
-                className="w-full bg-white border p-2"
+                className="w-full bg-white border border-[#31556180] p-4"
               />
             </p>
           </div>
 
-          <div className="flex justify-between gap-3 items-center border-y border-stone-300 mt-4 py-3">
+          <div className="flex justify-between gap-3 items-center mt-4 py-4">
             <strong className="text-[0.8rem]">Total</strong>
             <p className="text-[0.8rem]">
-              <strong className="text-stone-300">USD</strong>{" "}
+              <strong className="text-stone-300">USD </strong>
               <strong>
                 {props.shipment && props.shipment.status.bill
                   ? currencyFormatter.format(props.shipment?.status?.bill)
-                  : "unavailable"}
+                  : "Unavailable"}
               </strong>
             </p>
           </div>
@@ -166,9 +133,7 @@ export const CardPay = (props: any) => {
             <button
               type="submit"
               className={cn(
-                "capitalize mt-4 px-4 py-2 bg-green-700 text-white text-[0.8rem]"
-                // !canSubmit() && "cursor-not-allowed",
-                // isSubmitting && "opacity-35 cursor-not-allowed"
+                "capitalize mt-4 px-4 py-2 bg-[#004F6D] rounded-full text-white text-[0.8rem]"
               )}
               disabled={props.isSubmitting}
             >

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { navLinks } from "../navbar/nav-links";
 import { Title } from "../title";
@@ -6,12 +9,23 @@ import Logo from "../logo";
 import { footerLinkItems, connectIcons, contactLinks } from "./items";
 import { SocialIcon } from "./social-icon";
 import { ContactItem } from "./contact-item";
+import { cn } from "@/lib/utils";
+import { useEffect } from "react";
 
 export const Footer = () => {
+  const path = usePathname();
+  const checkoutPath = "/redeem-shipment";
+  const paypalPath = "/paypal/checkout";
+
   return (
-    <footer>
+    <footer className={cn(path === paypalPath && "hidden")}>
       <div className="py-28 px-16 bg-[#222222] text-white relative">
-        <div className="absolute bg-white h-16 w-1/3 top-0 right-0 polygon-3" />
+        <div
+          className={cn(
+            "absolute bg-white h-16 w-1/3 top-0 right-0 polygon-3",
+            path === checkoutPath && "bg-slate-50"
+          )}
+        />
 
         <div className="flex flex-col sm:flex-row gap-6 text-stone-400 text-[12px] sm:text-sm max-w-[740px]">
           <div className="flex-1 shrink-0">

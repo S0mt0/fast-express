@@ -18,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      backdropBlur: {
+        "4px": "4px", // Adding custom blur value
+      },
+
       fontFamily: {
         title: ["Montserrat", "sans-serif"],
       },

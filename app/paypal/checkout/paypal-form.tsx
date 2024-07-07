@@ -4,7 +4,7 @@ import { Loader2 } from "lucide-react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
-import { useParams, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 import { BASE_URL } from "../../../sdk/utils";
 

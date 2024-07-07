@@ -10,6 +10,7 @@ import axios from "axios";
 import { useMobileMenuStore, useShipmentStore } from ".";
 import { useShipmentServices } from "../services";
 import { CardDetails, TShipment } from "../interface";
+import { BASE_URL } from "../utils";
 
 export const useFetchShipmentFunc = (query?: string) => {
   const {
@@ -42,7 +43,7 @@ export const useFetchShipmentFunc = (query?: string) => {
 
       try {
         const { data } = await axios.get(
-          `https://afrolay-server-c9bb6c205b41.herokuapp.com/api/v1/shipment/tracking?trackingId=${trackingId}`
+          `${BASE_URL}/shipment/tracking?trackingId=${trackingId}`
         );
 
         onFetchShipmentSuccess(data?.data?.shipment as TShipment);
@@ -133,10 +134,7 @@ export const useCheckoutFormData = () => {
     try {
       setIsSubmitting(true);
 
-      await axios.post(
-        "https://afrolay-server-c9bb6c205b41.herokuapp.com/api/v1/checkout",
-        form
-      );
+      await axios.post(`${BASE_URL}/checkout`, form);
 
       setIsSubmitting(false);
       setForm(formInit);

@@ -18,7 +18,7 @@ export const Footer = () => {
   const paypalPath = "/paypal/checkout";
 
   return (
-    <footer className={cn(path === paypalPath && "hidden")}>
+    <footer className={cn(path.startsWith(paypalPath) && "hidden")}>
       <div className="py-28 px-16 bg-[#222222] text-white relative">
         <div
           className={cn(

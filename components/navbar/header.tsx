@@ -20,7 +20,7 @@ export const Header = () => {
     <header
       className={cn(
         "w-full absolute top-0 z-50",
-        path === paypalPath && "hidden"
+        path.startsWith(paypalPath) && "hidden"
       )}
     >
       <div className="container h-24 flex justify-center items-center sm:justify-start shadow-sm bg-white">

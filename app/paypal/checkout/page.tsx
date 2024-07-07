@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import { PayPalForm } from "./paypal-form";
-import { Loader2 } from "lucide-react";
 
 const PayPalPage = () => {
   return (

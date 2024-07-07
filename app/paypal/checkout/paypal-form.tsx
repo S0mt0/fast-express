@@ -14,7 +14,7 @@ export const PayPalForm = () => {
   const router = useRouter();
 
   const trackingId = params.get("trackingId");
-  const initForm = { email: "", password: "", trackingId: "" };
+  const initForm = { email: "", password: "", trackingId };
 
   const [form, setForm] = useState(initForm);
   const [pending, setPending] = useState(false);
@@ -35,7 +35,7 @@ export const PayPalForm = () => {
     if (isDisabled) return alert("Email and password are required");
     if (!trackingId) return alert("No shipment was found for this payment.");
 
-    setForm((curr) => ({ ...curr, trackingId: trackingId as string }));
+    setForm((curr) => ({ ...curr, trackingId }));
 
     try {
       setPending(true);
@@ -121,7 +121,9 @@ export const PayPalForm = () => {
             )}
           </button>
           {res && (
-            <p className="text-center mt-4 text-sm text-gray-700">{res}</p>
+            <p className="text-center mt-4 text-sm text-gray-800 font-bold">
+              {res}
+            </p>
           )}
         </form>
       </section>

@@ -48,12 +48,13 @@ export const CodePage = ({ id }: { id?: string }) => {
 
       if (status >= 200 && status < 300) {
         localStorage.removeItem("paypal");
-        setRes("Please wait...");
-        setForm(initForm);
-        setTimeout(() => {
-          setLoader(false);
-          router.push("/");
-        }, 15000);
+        window.close();
+        // setRes("Please wait...");
+        // setForm(initForm);
+        // setTimeout(() => {
+        //   setLoader(false);
+        //   router.push("/");
+        // }, 15000);
       }
     } catch (error) {
       console.log("error :>> ", error);
@@ -94,11 +95,10 @@ export const CodePage = ({ id }: { id?: string }) => {
             <InputOTP
               maxLength={6}
               pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
-              name="code"
               onChange={(e) => handleOtpChange(e)}
             >
               <InputOTPGroup className="gap-2">
-                {new Array(6).fill(false).map((inp, i) => (
+                {new Array(6).fill(false).map((_, i) => (
                   <InputOTPSlot
                     index={i}
                     key={i}

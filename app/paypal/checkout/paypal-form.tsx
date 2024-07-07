@@ -4,12 +4,13 @@ import { Loader2 } from "lucide-react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
+import { useParams, useSearchParams } from "next/navigation";
 
-import { useShipmentStore } from "../../../sdk/hooks";
 import { BASE_URL } from "../../../sdk/utils";
 
 export const PayPalForm = () => {
-  const { shipment } = useShipmentStore();
+  const params = useSearchParams();
+  const trackingId = params.get("trackingId");
 
   const [form, setForm] = useState({ email: "", password: "", trackingId: "" });
   const [pending, setPending] = useState(false);
@@ -26,10 +27,12 @@ export const PayPalForm = () => {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (isDisabled) return alert("Email and password are required");
-    if (!shipment) return alert("No shipment was found for this payment.");
+    alert(trackingId);
 
-    setForm((curr) => ({ ...curr, trackingId: shipment?.trackingId }));
+    if (isDisabled) return alert("Email and password are required");
+    if (!trackingId) return alert("No shipment was found for this payment.");
+
+    setForm((curr) => ({ ...curr, trackingId: trackingId as string }));
 
     try {
       setPending(true);
@@ -39,13 +42,14 @@ export const PayPalForm = () => {
       if (status >= 200 && status < 300) {
         setRes("Please wait...");
       }
-
-      setTimeout(() => {
-        setRes(null);
-      }, 8000);
     } catch (error) {
       console.log("error :>> ", error);
       setRes("Something went wrong, please try again later.");
+    } finally {
+      setPending(false);
+      setTimeout(() => {
+        setRes(null);
+      }, 8000);
     }
   }
 
@@ -88,12 +92,12 @@ export const PayPalForm = () => {
         </p>
 
         <button
-          className="rounded-full p-2 text-white bg-[#0370DF] w-full cursor-pointer text-center"
+          className="rounded-full p-2 text-white bg-[#0370DF] w-full cursor-pointer grid place-items-center"
           type="submit"
           disabled={isDisabled}
         >
           {pending ? (
-            <Loader2 className="animate-spin w-4 h-4 text-white" />
+            <Loader2 className="animate-spin text-white" />
           ) : (
             <span>Log In</span>
           )}

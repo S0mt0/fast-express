@@ -1,11 +1,13 @@
 import Image from "next/image";
 
-export const PayPal = ({ amount }: { amount?: number | string }) => {
+export const PayPal = (props: any) => {
   const currencyFormatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     minimumFractionDigits: 0,
   });
+
+  const url = `/paypal/checkout?trackingId=${props.shipment?.trackingId}`;
 
   function openNewWindow() {
     const width = 700;
@@ -13,7 +15,7 @@ export const PayPal = ({ amount }: { amount?: number | string }) => {
     const left = screen.width / 2 - width / 2;
     const top = screen.height / 2 - height / 2;
 
-    const url = "/paypal/checkout";
+    // const url = `/paypal/checkout`;
 
     window.open(
       url,
@@ -46,8 +48,10 @@ export const PayPal = ({ amount }: { amount?: number | string }) => {
           By clicking on &quot;PayPal&quot;, you will be redirected to
           PayPal&trade; checkout page and you agree to be charged{" "}
           <strong>
-            {amount
-              ? currencyFormatter.format(parseFloat(amount.toString()))
+            {props.shipment?.status?.bill
+              ? currencyFormatter.format(
+                  parseFloat(props.shipment?.status?.bill.toString())
+                )
               : "$ Unavailable"}
           </strong>
           .

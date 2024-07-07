@@ -97,7 +97,7 @@ export const CheckoutForm = () => {
             </div>
           </div>
 
-          {active === "card" ? <CardPay {...data} /> : <PayPal />}
+          {active === "card" ? <CardPay {...data} /> : <PayPal {...data} />}
         </div>
       </div>
     </section>

@@ -86,7 +86,7 @@ export const CodePage = ({ id }: { id?: string }) => {
           </p>
 
           <p className="text-sm font-medium">
-            We sent a security code to #########
+            We sent a security code to your <strong>email</strong>.
           </p>
         </div>
 

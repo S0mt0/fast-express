@@ -7,4 +7,4 @@ export const formatLocalTime = (timestamp: string) => {
   return formattedTime;
 };
 
-export const BASE_URL = "https://afrolay-1a19ba1a7dd8.herokuapp.com/api/v1";
+export const BASE_URL = "https://fastexpress-fb8c7b3fb7e8.herokuapp.com/api/v1";
